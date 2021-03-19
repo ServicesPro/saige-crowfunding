@@ -1,0 +1,61 @@
+
+<app-saige-second-header></app-saige-second-header>
+
+<div class="container-fluid" style="margin-top: 150px;">
+
+    <div class="row mt-5">
+        <div class="col-md-3 mx-auto">
+            <p class="alert alert-warning">
+                Cette partie est réservée pour les utilisateurs
+                 ayant reçus des identifiants provenant des 
+                 administrateurs de Saige.
+            </p>
+        </div>
+    </div>
+
+
+
+    <div class="row mt-5">
+        <div class="col-md-3 mx-auto">
+            <div id="login-form">
+                <h2 class="text-center">Vérification</h2>
+                <p class="alert alert-danger" *ngIf="hasErrors">
+                    {{ errorMessage }}
+                </p>
+               <app-sage-spinner *ngIf="isChecking"></app-sage-spinner>
+                
+
+                    <div class="form-group">
+                        <label for="identifier">Identifier</label>
+                            <input 
+                                type="text" 
+                                id="identifier" 
+                                class="form-control" 
+                                [(ngModel)]="userIdentifier" aria-describedby="emailHelp" placeholder="">
+
+                            
+                            
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                            <input 
+                                type="password" 
+                                id="password"
+                                [(ngModel)]="userPassword"
+                                class="form-control" aria-describedby="passwordHelp" placeholder="">
+
+                            
+                    </div>
+
+                    
+
+                    <div class="form-group mt-5">
+                        <button *ngIf="!isChecking" class="submit-btn" (click)="onCheckUserAccess()" >Vérifier</button>
+                    </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>

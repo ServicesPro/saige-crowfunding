@@ -1,0 +1,98 @@
+<div class="container-luid">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="container-luid">
+                <div class="row">
+                    <div class="col-md-6 mt-2">
+                        <div class="project-action add-action" (click)="onCreateNewProject()">
+                            <span>+ Ajouter un projet</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <div class="project-action invest-action">
+                            <span [routerLink]="[ '/home', 'projects' ]">Investir</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <div class="row mt-5">
+       
+        <div class="col-md-12">
+            <div id="projects-container">
+                <div class="container-fluid">
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                          <h2>Mes projets</h2>
+                        </div> 
+                    </div> 
+
+
+                    <div class="row mt-5" *ngIf="!isDataReady">
+                        <div class="col-md-12">
+                           <app-sage-spinner></app-sage-spinner>
+                        </div> 
+                    </div> 
+                    <div class="row">
+                        <div class="col-md-3 pl-2 mt-3" *ngFor="let project of projects"> 
+            
+                            <div class="user-project" [(ngModel)]="project.id" ngDefaultControl (click)="onSingleProjectEditClicked(project.id)">
+                                <h5 class="project-title"> {{  project.name  }}</h5>
+                        
+                                <div class="mt-2">
+                                    <p style="word-wrap: break-word;">
+                                        {{  compressDescription( project.description )  }}
+                                    </p> 
+                                </div>
+                        
+                              
+                        
+                                <div style="position: relative;left: 0;bottom: 0;">
+                
+                                    <div>
+                                        <span *ngIf="project.approuved=='accept'" style="color: green;">
+                                            Accepté
+                                        </span>
+                                        <span *ngIf="project.approuved=='none'" style="color: blue;">
+                                            En cours
+                                        </span>
+                                        <span *ngIf="project.approuved=='reject'" style="color: red;">
+                                            Rejeté
+                                        </span>
+                                    </div>
+                                    <div>
+                                      
+                                    </div>
+                                    <input type='hidden' value="project id" />
+                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        
+                    </div> 
+                    <div class="row mt-5">
+                        
+                    </div> 
+
+                    <div class="row mt-5">
+                        
+                    </div> 
+
+
+
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,285 @@
+<div id="data-container">
+    
+    
+<div class="container-fluid mt-5">
+    <div class="row mt-5">
+        <div class="col-md-12 mx-auto pl-0">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <div *ngIf="isLoading">
+                            <span><app-sage-spinner ></app-sage-spinner></span>
+                            <span class="mt-5">Veuillez patienter...</span>
+                        </div>
+            
+                        <div *ngIf="hasErrors">
+                            <p class="alert alert-danger">
+                                Une erreur es survenu pendant la créeation du projet.<br/>
+                                Veuillez réessayer plus tard.
+                            </p>
+                        </div>
+            
+                        <div *ngIf="hasSuccess" class="alert alert-success">
+                            <h1 style="font-size: 1.5em;">Votre projet a été créé avec succès..</h1>
+                            <p>
+                               <button (click)="onGoBack()" class="btn btn-danger">Retour</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <form [formGroup]="projectForm" (ngSubmit)="onSaveProject()" *ngIf="!isCreatingPost" class="mt-5"  method="POST">
+                
+                <div class="container-fluid mt-5">
+
+                    <div class="row mt-5">
+                        <div class="col-md-4 offset-md-2 pl-5">
+                            <h1>Création d'un nouvel projet</h1>
+                        </div>
+                        
+                       
+                            
+                    </div>
+
+
+
+                    <div class="row mt-5" *ngIf="isVip">
+                        <div class="col-md-4 offset-md-2 pl-5">
+                            <div class="form-group" style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+                                <label for="vip">Ce projet est un projet d'état</label>
+                                    <input 
+                                        type="checkbox" 
+                                        id="name" 
+                                        [(ngModel)]="privateProject"
+                                        name="vip"
+                                        class="form-control" 
+                                        aria-describedby="nameHelp">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 offset-md-1">
+                            <h2>Type de projet</h2>
+                                <p>
+                                   Définir si c'est un projet d'état ou non
+                                </p>
+                        </div>
+                            
+                    </div>
+                    
+                    <div class="row mt-5">
+                        <div class="col-md-4 offset-md-2 pl-5">
+                            <div class="form-group">
+                                <label for="name">Nom du projet</label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        [(ngModel)]="model.name"
+                                        name="name"
+                                        class="form-control" 
+                                        formControlName="name" aria-describedby="nameHelp" placeholder="nom du projet">
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="col-md-4 offset-md-1">
+                            <h2>Nom Project</h2>
+                                <p>
+                                    Donner un nom qui fait valoir votre projet.
+                                </p>
+                        </div>
+                            
+                    </div>
+
+
+                    <div class="row mt-5">
+                        <div class="col-md-4 offset-md-2 pl-5">
+                            <div class="form-group">
+                                <label for="location">Pays</label>
+                                    <select
+                                        id="location" 
+                                        class="form-control"
+                                        [(ngModel)]="model.location"
+                                        name="location"
+                                        formControlName="location" aria-describedby="locationHelp">
+                                        <option *ngFor="let item of countryList" value="{{ item }}">{{item }}</option>
+                                    </select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 offset-md-1 pl-5">
+                            <h2>Pays </h2>
+                                <p>
+                                  Choisir le pays dans lequel s'exécutera le projet
+                                </p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row mt-5">
+                        <div class="col-md-4 offset-md-2 pl-5">
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                    <textarea
+                                        id="description" 
+                                        class="form-control"
+                                        [(ngModel)]="model.description"
+                                        name="description"
+                                        formControlName="description" aria-describedby="descriptionHelp" placeholder="description de votre projet" rows="10"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 offset-md-1">
+                            <h2>Description du projet</h2>
+                                <p>
+                                    Dans la section suivante vous donnerez au plus 
+                                    4 (quatre) particularités de votre projet.
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-4 offset-md-2 pl-5">
+                            <div class="form-group">
+                                <label for="duration">Durée ( en jours )</label>
+                                    <input
+                                        id="duration" 
+                                        class="form-control"
+                                        [(ngModel)]="model.duration"
+                                        name="duration"
+                                        formControlName="duration" aria-describedby="durationHelp"  type="number">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 offset-md-1">
+                            <h2>Durée</h2>
+                                <p>
+                                    Donner la différence entre aujourd'hui et la data d'échéance du projet
+                                </p>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-5">
+                        <div class="col-md-4 offset-md-2 pl-5">
+                            <div class="form-group">
+                                <label for="domain">Domaine</label>
+                                    <select
+                                        id="domain" 
+                                        class="form-control"
+                                        [(ngModel)]="model.domain"
+                                        name="domain"
+                                        formControlName="domain" aria-describedby="domainHelp">
+                                        
+
+                                        <optgroup label="INFRASTRUCTURE">
+                                            <option value="routiere">Routière</option>
+                                            <option value="pont">Ponts</option>
+                                            <option value="aeroportuaire">Aéroportuaire</option>
+                                            <option value="hotel">Hotelerie</option>
+                                            <option value="logesocial">Logements sociaux</option>
+                                            <option value="hopital">Hôpitaux</option>
+                                        </optgroup>
+                                        <optgroup label="INDUSTRIELS">
+                                            <option value="parIndus">Parc Industriel</option>
+                                            <option value="ville">Ville</option>
+                                            <option value="village-intelligent">Village Intélligent</option>
+                                            <option value="pipeline">Pipeline</option>
+                                            <option value="petrol">Dépôt pétrolier</option>
+                                            <option value="usine">Usine Clé En Main</option>
+                                        </optgroup>
+                                        <optgroup label="AGRI-BUSINESS">
+                                            <option value="agropole">Agropole</option>
+                                            <option value="ferme">Ferme Intégrée</option>
+                                        </optgroup>
+                                        
+                                    </select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 offset-md-1">
+                            <h2>Domaine du projet</h2>
+                            <p>
+                              Mettre le domaine dans le lequel s'inscrit le projet 
+                              que vous nous soumettez.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-4 offset-md-2 pl-5">
+                            <div class="form-group">
+                                <label for="currency">Monnaie</label>
+                                    <select
+                                        id="currency" 
+                                        class="form-control"
+                                        [(ngModel)]="model.currency"
+                                        name="currency"
+                                        formControlName="currency" aria-describedby="currencyHelp">
+                                        <option value="USD">USD</option>
+                                    </select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 offset-md-1">
+                            <h2>devise de financement</h2>
+                                <p>
+                                   Chosir dans quelle devise de monnaie vous 
+                                   avez exprimer le bilan total de votre projet
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-4 offset-md-2 pl-5">
+                            <div class="form-group">
+                                <label for="money_wanted">Montant total</label>
+                                    <input
+                                        id="money_wanted" 
+                                        class="form-control"
+                                        type="number"
+                                        min="0"
+                                        [(ngModel)]="model.money_wanted"
+                                        name="money_wanted"
+                                        formControlName="money_wanted" aria-describedby="money_wantedHelp"/>
+                            </div>
+            
+                        </div>
+                        
+                        <div class="col-md-4 offset-md-1">
+                            <h2>Montant</h2>
+                                <p>
+                                    A combien s'élève votre projet dans la devise de monétaire choisie
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-4 offset-md-2 pl-5">
+                            <div class="form-group mt-5">
+                                <button class="submit-btn" type="submit"[disabled]="projectForm.invalid" >Créer mon projet</button>
+                            </div>
+            
+                        </div>
+                    </div>
+
+
+                    
+                   
+
+                </div>
+                
+            </form>
+
+        </div>
+        
+            
+    </div>
+    
+</div>
+
+
+</div>

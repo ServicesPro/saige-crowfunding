@@ -1,0 +1,67 @@
+#data-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+#user-datas {
+    background-color: #0061F2;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#user-datas span {
+    font-size: 2.1em;
+    color: white;
+}
+
+.user-project {
+    border-color: silver;
+    background-color: white;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    border: 1px solid silver;
+    border-radius: 20px;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    height: 30vh;
+    cursor: pointer;
+}
+
+.user-project:hover {
+    transform: scale(1.01)
+}
+
+.user-add-project {
+    justify-content: center;
+    align-items: center;
+    color: #0061F2;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.add-image span {
+    padding: 2vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+.add-image {
+    padding-bottom: 7vh;
+    text-align: right;
+}
+
+.add-image span:hover {
+    background-color: gray;
+    color: white;
+}
+
+

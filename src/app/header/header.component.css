@@ -1,0 +1,40 @@
+
+
+@media screen and (max-width: 700px) {
+   
+}
+
+.main-nav-text {
+    font-weight: 500 !important;
+    color: black !important;
+    font-size: 1.2em;
+}
+
+.main-nav-text:hover {
+    font-size: 1.2em;
+    border-bottom: 1px solid black;
+}
+
+
+.startedtop-btn {
+    background-color: #0061F2;
+    border: none;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    border-radius: 25px;
+    border: 1px solid  #0061F2;
+}
+
+.startedtop-btn:hover {
+    border: 1px solid  #0061F2;
+    background-color: transparent;
+    color: black;
+}
+
+
+@media screen and (max-width: 400px) {
+    
+  }

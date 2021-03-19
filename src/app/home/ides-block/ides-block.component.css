@@ -1,0 +1,11 @@
+#idea-steps {
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin-top: 20vh;
+}
+
+.rounded-image {
+    width: 10vh;
+    height: 10vh;
+}

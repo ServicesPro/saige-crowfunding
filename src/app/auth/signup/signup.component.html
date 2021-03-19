@@ -1,0 +1,169 @@
+<div id="container">
+    <div id="user-sign">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9 mx-auto my-auto">
+                    <div id="register-form">                        
+                        <h2 class="text-center">S'inscrire</h2>
+                        <p class="text-danger" *ngIf="hasErrors">{{ errorMessage }}</p>
+                        <div class="container" *ngIf="isAuthing">
+                            <div class="row">
+                                <div class="col-md-12 mx-auto text-center">
+                                    <mat-spinner></mat-spinner>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" *ngIf="!isAuthing" class="mt-5"  method="POST">
+                            
+
+                            <div class="form-data-group">
+                                <div class="form-group">
+                                    <label for="fullname">Nom complet</label>
+                                    
+                                    <input 
+                                        type="text" 
+                                        id="fullname" 
+                                        class="form-control" 
+                                        formControlName="fullname" aria-describedby="fullnameHelp" placeholder="nom et prénoms">
+                                
+                                        <ul *ngIf="signupForm.get('fullname').invalid && (signupForm.get('fullname').dirty || signupForm.get('fullname').touched)"
+                                        class="alert alert-danger mt-3">
+                                            
+                                            <li *ngIf="signupForm.get('fullname').errors.required">
+                                                nom complet  est requis
+                                            </li>
+                                            <li *ngIf="signupForm.get('fullname').errors.minLength">
+                                                nom complet  est trop court
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Adresse email</label>
+                                        <input 
+                                            type="email" 
+                                            id="email" 
+                                            class="form-control" 
+                                            formControlName="email" aria-describedby="emailHelp" placeholder="email">
+                                    
+                                    <ul *ngIf="signupForm.get('email').invalid && (signupForm.get('email').dirty || signupForm.get('email').touched)"
+                                        class="alert alert-danger mt-3">
+                                            <li>email invalide</li>
+                                            <li *ngIf="signupForm.get('email').errors.required">
+                                                Email est requis
+                                            </li>
+                                    </ul>
+                                    
+                                </div>
+            
+                                <div class="form-group">
+                                    <label for="password">Mot de passe</label>
+
+                                    <div class="container-fluid p-0">
+                                        <div class="row">
+                                            <div class="col-md-11">
+
+                                                <input 
+                                                type="password"
+                                                id="password"
+                                                #passwordField
+                                                [(ngModel)]="userpassword"
+                                                name="userpassword"
+                                                class="form-control" 
+                                                formControlName="password" aria-describedby="passwordHelp" placeholder="mot de passe">
+                                        
+                                            
+                                            </div>
+                                            <div class="col-md-1 my-auto">
+                                                <div>
+                                                    <img #passToggler  src="assets/img/invisible.svg" width="25" height="25" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                        
+                                    <ul *ngIf="signupForm.get('password').invalid && (signupForm.get('password').dirty || signupForm.get('password').touched)"
+                                        class="alert alert-danger mt-3">
+                                            <li>mot de passe invalide</li>
+                                            <li *ngIf="signupForm.get('password').errors.required">
+                                                mot de passe est requis
+                                            </li>
+                                            <li *ngIf="signupForm.get('password').errors.minLength">
+                                                au moins 6 caractères
+                                            </li>
+            
+                                    </ul>
+                                </div>
+                            </div>
+        
+                           
+                            
+
+                            <div class="form-data-group">
+        
+                                <div class="form-group">
+                                    <label for="confirm_password">Confirmer  mot de passe</label>
+                                        <input 
+                                            type="password" 
+                                            id="confirm_password"
+                                            name="confirm_password"
+                                            class="form-control" 
+                                            formControlName="confirm_password" aria-describedby="confirm_passwordHelp" >
+                                    
+                                    <ul *ngIf="!passwordsMatch" class="alert alert-danger mt-3">
+                                        <li>
+                                            mots de passe ne correspondent pas
+                                        </li>
+            
+                                    </ul>
+                                </div>
+            
+                                <div class="form-group">
+                                    <label for="birthday">Date de naissance</label>
+                                        <input 
+                                            type="date" 
+                                            id="birthdayd" 
+                                            max="2002-01-01"
+                                            class="form-control" 
+                                            formControlName="birthday" aria-describedby="birthdaydHelp" placeholder="birthday">
+                                        
+                                            <ul *ngIf="signupForm.get('birthday').invalid && (signupForm.get('birthday').dirty || signupForm.get('birthday').touched)"
+                                            class="alert alert-danger mt-3">
+                                                <li>date invalide</li>
+                                                <li *ngIf="signupForm.get('birthday').errors.required">
+                                                    date est requise
+                                                </li>
+                                                
+                
+                                        </ul>
+                                </div>
+            
+                                <div class="form-group mt-5">
+                                    <button class="submit-btn" type="submit"[disabled]="signupForm.invalid" >Se connecter</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <p class="mt-5 text-right" *ngIf="!isAuthing"><a [routerLink]="[ '/auth', 'signin' ]">Vous avez déjà un compte?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="data">
+        <div>
+            <h1>SAIGE</h1>
+            <p> Société Africaine d'Investissement<br/> et de Gestion 
+                d'Entreprises</p>
+            <p>
+                <button class="btn-back" (click)="goBack()">Retour</button>
+            </p>
+        </div>
+    </div>
+</div>
+
+

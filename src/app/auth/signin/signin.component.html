@@ -1,0 +1,117 @@
+<div id="container">
+    <div id="user-sign">
+
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <div class="col-md-10 mx-auto my-auto">
+                    <div id="login-form">
+                        <h2 class="text-center">Connexion</h2>
+                        <p class="alert alert-danger" *ngIf="hasErrors">
+                            {{ errorMessage }}
+                        </p>
+                    <app-sage-spinner *ngIf="isAuthing"></app-sage-spinner>
+                        <form [formGroup]="signinForm" (ngSubmit)="onSubmit()"  class="mt-5"  method="POST">
+        
+                            
+                            
+                            <div class="form-group">
+                                <label for="fullname">Adresse email</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        class="form-control" 
+                                        [(ngModel)]="model.email"
+                                        name="email"
+                                        formControlName="email" aria-describedby="emailHelp" placeholder="email">
+        
+                                    
+                                    <div >
+        
+                                        <ul *ngIf="signinForm.get('email').invalid && (signinForm.get('email').dirty || signinForm.get('email').touched)"
+                                        class="alert alert-danger mt-3">
+                                            <li>email est invalid</li>
+                                            <li *ngIf="signinForm.get('email').errors.required">
+                                                Email est requis
+                                            </li>
+                                        </ul>
+                                        
+                                    </div>
+                                    
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="password">Mot de passe</label>
+
+                                <div class="container-fluid p-0">
+                                    <div class="row">
+                                        <div class="col-md-11">
+                                            <input 
+                                            type="password" 
+                                            #passwordField
+                                            id="password"
+                                            [(ngModel)]="model.password"
+                                            name="password"
+                                            class="form-control" 
+                                            formControlName="password" aria-describedby="passwordHelp" placeholder="mot de passe">
+    
+                                        </div>
+                                        <div class="col-md-1 my-auto">
+                                            <div>
+                                                <img #passToggler  src="assets/img/invisible.svg" width="25" height="25" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                   
+                                   
+        
+                                    <div *ngIf="signinForm.get('password').invalid && (signinForm.get('password').dirty || signinForm.get('password').touched)"
+                                        class="alert alert-danger mt-3">
+        
+                                        <ul>
+                                            <li *ngIf="signinForm.get('password').errors.required">
+                                                mot de passe est requis
+                                            </li>
+                                        
+                                        </ul>
+                                        
+                                    </div>
+                            </div>
+        
+                            
+        
+                            <div class="form-group mt-5">
+                                <button class="submit-btn" type="submit"  *ngIf="!signinForm.invalid" >Se connecter</button>
+                            </div>
+                        </form>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>
+                                        <a [routerLink]="[ '/auth', 'signup' ]">Créer mon compte</a>
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="mt-5 text-right"><a (click)="onResetPassword()" style="cursor: pointer;">Mot de passe oublié ?</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="data">
+        <div>
+            <h1>SAIGE</h1>
+            <p> Société Africaine d'Investissement<br/> et de Gestion 
+                d'Entreprises</p>
+            <p>
+                <button class="btn-back" (click)="goBack()">Retour</button>
+            </p>
+        </div>
+    </div>
+</div>

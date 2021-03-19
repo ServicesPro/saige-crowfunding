@@ -1,0 +1,54 @@
+
+<div class="projects_item bordered" >
+    <div class="container-fluid p-0" (click)="onViewSingleProject()">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img class="projects-image" src="{{ project.data.product_img }}" width="100%"/>
+            </div>
+        </div>
+
+        <div class="row mt-1 pl-3 pr-3">
+            <div class="col-md-12">
+                <span class="funding_type">EN FINANCEMENT</span>
+            </div>
+            
+        </div>
+        <hr/>
+
+
+        <div class="row mt-1 pl-3 pr-3">
+            <div class="col-md-12">
+                <span class="project_name">{{ project.data.name }}</span>
+            </div>
+        </div>
+
+        <div class="row pl-3 pr-3">
+            <div class="col-md-12 mt-1" >
+                <p class="project-item-description">
+                    {{ project.data.description }}
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-2 pl-1 pr-1">
+            <div class="col-md-6 text-center">
+                <span class="collecte-completed">{{ getMoneyPercent(project.data.money_wanted) }} %</span> 
+            </div>
+            <div class="col-md-6 text-center" style="align-items: center;">
+                <span>But</span><br/>
+                <span>{{ project.data.money_wanted }} USD</span>
+            </div>
+        </div>
+
+        <div class="row mt-2 pl-1 pr-1 ">
+            <div class="col-md-12 text-left" style="align-items: center;">
+                <div style="background-color: #29363B; height: 1vh"></div>
+                <p style="margin-top: 1vh">
+                    <span> <img src="assets/img/home/time.svg" width="7%"/> </span> <span class="pl-1"> Restant {{ project.data.duration }} jours </span>
+                </p>
+            </div>
+        </div>
+
+        
+    </div>
+</div>

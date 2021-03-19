@@ -1,0 +1,168 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+
+.project-action {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.add-action {
+    background: linear-gradient(
+	    rgba(23, 31, 111, 0.3), 
+	    rgba(23, 31, 111, 0.99)
+	    );
+}
+
+.add-action:hover {
+    background: linear-gradient(
+	    rgba(23, 31, 111, 0.99), 
+	    rgba(23, 31, 111, 0.99)
+	    );
+}
+
+.invest-action {
+    background: linear-gradient(
+	    rgba(0, 186, 148, 0.3), 
+	    rgba(0, 186, 148, 0.99)
+	    );
+}
+
+.invest-action:hover {
+    background: linear-gradient(
+	    rgba(0, 186, 148, 0.99), 
+	    rgba(0, 186, 148, 0.99)
+	    );
+}
+
+#projects-container {
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px;
+}
+
+
+
+
+#user-datas {
+    background-color: #0061F2;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#user-datas span {
+    font-size: 2.1em;
+    color: white;
+}
+
+.user-project {
+    border-color: silver;
+    background-color: white;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    border: 1px solid silver;
+    border-radius: 20px;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    height: 30vh;
+    cursor: pointer;
+}
+
+.user-project:hover {
+    transform: scale(1.01)
+}
+
+.user-add-project {
+    justify-content: center;
+    align-items: center;
+    color: #0061F2;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.add-image span {
+    padding: 2vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+.add-image {
+    padding-bottom: 7vh;
+    text-align: right;
+}
+
+.add-image span:hover {
+    background-color: gray;
+    color: white;
+}
+
+
+
+
+
+.project-title {
+    font-size: 1.2em;
+    font-weight: 900;
+}
+
+#sendVerificationEmailButton {
+    background-color: #00BA94;
+    border: none;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+
+}
+
+#sendVerificationEmailButton:hover {
+    filter: brightness(150%);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {...}*/
+
+/* Large devices (laptops/desktops, 992px and up)*/
+@media only screen and (min-width: 992px) {
+	
+
+	
+
+
+	
+}
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up)
+@media only screen and (min-width: 1200px) {...}*/
+
+
+

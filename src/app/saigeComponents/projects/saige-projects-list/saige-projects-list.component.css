@@ -1,0 +1,199 @@
+
+
+
+/*   */
+
+
+
+/* Extra small devices (phones, 600px and down)*/
+@media only screen and (max-width: 600px) {
+	#data-container {margin-top: 80px;}
+
+    #top-title {
+        background: linear-gradient(
+            rgba(0, 0, 255, 0.01), 
+            rgba(0, 0, 255, 0.01)
+            ), url("../../../../assets/img/invest_banner.jpg");
+    }
+
+    #projects-blocks {
+        margin-top: 10vh;
+    }
+
+    .bordered {
+        border: 1px solid gray;
+        
+    }
+
+
+
+    .projects_item {
+        background-color: white;
+        
+    }
+
+    .projects_item:hover {
+        transform: scale(1.01);
+        border: none;
+        box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+        
+    }
+
+    .project_item:hover {
+        transform: scale(1.1);
+    }
+
+    .project_name {
+        font-size: 1.5em;
+    }
+
+    .projects-image {
+        height: 300px;
+    }
+
+
+    .funding_type {
+        font-size: 0.67em;
+    }
+
+    .project-item-description {
+        font-size: 0.8em;
+    }
+    .project-domain {
+        background-color: violet;
+        border-radius: 5px;
+        padding: 2px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+
+    .item-container {
+        /*display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;*/
+    }
+    .item-container:hover {
+    transform: scale(1.1);
+    }
+
+    .item-container-text {
+        font-size: 1.2em;
+        font-weight: 100;
+        cursor: pointer;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up)*/
+@media only screen and (min-width: 992px) {
+	
+	#data-container {margin-top: 80px;}
+
+    #top-title {
+        background: linear-gradient(
+            rgba(0, 0, 255, 0.01), 
+            rgba(0, 0, 255, 0.01)
+            ), url("../../../../assets/img/invest_banner.jpg");
+            background-size: contain;
+    
+    height: 200px;
+    }
+
+    #projects-blocks {
+        margin-top: 10vh;
+    }
+
+    .bordered {
+        border: 1px solid gray;
+        
+    }
+
+
+
+    .projects_item {
+        background-color: white;
+        
+    }
+
+    .projects_item:hover {
+        transform: scale(1.01);
+        border: none;
+        box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+   
+        
+    }
+
+    .project_item:hover {
+        transform: scale(1.1);
+    }
+
+    .project_name {
+        font-size: 1.5em;
+    }
+
+    .projects-image {
+        height: 300px;
+    }
+
+
+    .funding_type {
+        font-size: 0.67em;
+    }
+
+    .project-item-description {
+        font-size: 0.8em;
+    }
+    .project-domain {
+        background-color: violet;
+        border-radius: 5px;
+        padding: 2px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+
+    .item-container {
+        /*display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;*/
+    }
+    .item-container:hover {
+    transform: scale(1.1);
+    }
+
+    .item-container-text {
+        font-size: 1.2em;
+        font-weight: 100;
+        cursor: pointer;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {...}*/
+
+
+

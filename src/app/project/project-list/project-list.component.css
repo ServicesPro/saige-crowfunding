@@ -1,0 +1,65 @@
+#top-title {
+    background-color:  #29363B;
+    color: white;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+#projects-blocks {
+    margin-top: 10vh;
+}
+
+.bordered {
+    border: 1px solid gray;
+    
+}
+
+
+
+.projects_item {
+    background-color: white;
+    
+}
+
+.projects_item:hover {
+    transform: scale(1.01);
+    border: none;
+    box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+    
+}
+
+.project_item:hover {
+    transform: scale(1.1);
+}
+
+.project_name {
+    font-size: 1.5em;
+}
+
+.projects-image {
+    height: 300px;
+}
+
+
+.funding_type {
+    font-size: 0.67em;
+}
+
+.project-item-description {
+    font-size: 0.8em;
+}
+.project-domain {
+    background-color: violet;
+    border-radius: 5px;
+    padding: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+

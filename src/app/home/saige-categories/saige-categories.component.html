@@ -1,0 +1,90 @@
+<div id="categories">
+
+    <div id="category-top">
+        <div id="category-title">
+            <h1 id="category-title-text" >Nos catégories<br/><span>d'actions</span></h1>
+        </div>
+        <div id="category-top-content">
+            <div class="category-item">
+                <div class="category-item-content agri small-item">
+                    
+                    <div class="category-item-content-text">
+                        <span>Agribusiness</span>
+                        <button class="explore-btn" [routerLink]="[ '/home', 'projects' ]">Explorer</button>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="category-bottom">
+        <div class="category-item">
+            <div class="category-item-content infra big-item">
+                <div class="category-item-content-text">
+                        <span>Infrastructures</span>
+                        <button class="explore-btn" [routerLink]="[ '/home', 'projects' ]">Explorer</button>
+                    </div>
+            </div>
+        </div>
+        <div class="category-item ">
+            <div class="category-item-content indus big-item">
+                <div class="category-item-content-text">
+                        <span>Industriels</span>
+                        <button class="explore-btn"[routerLink]="[ '/home', 'projects' ]" >Explorer</button>
+                    </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div id="all-categories">
+        <div id="all-categories-title">
+            <h1 id="all-categories-title-text">Tous<br/><span >nos domaines</span></h1>
+        </div>
+        <div class="all-categories-list">
+            <div class="category-domain_item">
+                <div class="image-container">
+                <img src="assets/img/home/agriculture.svg" width="100" height="100">
+                </div>
+                
+                <span style="font-weight: 100 ;">Ferme</span>
+            </div>
+            <div class="category-domain_item" [routerLink]="[ '/home', 'projects' ]" >
+                <div class="image-container">
+                <img src="assets/img/home/road.svg" width="100" height="100">
+                </div>
+                
+                <span style="font-weight: 100 ;">Routière</span>
+            </div>
+            <div class="category-domain_item"  [routerLink]="[ '/home', 'projects' ]">
+                <div class="image-container">
+                <img src="assets/img/home/industrial-plant.svg" width="100" height="100">
+                </div>
+                
+                <span style="font-weight: 100 ;">Usine</span>
+            </div>
+            <div class="category-domain_item" [routerLink]="[ '/home', 'projects' ]">
+                <div class="image-container">
+                <img src="assets/img/home/plane.svg" width="100" height="100">
+                </div>
+               
+                <span style="font-weight: 100 ;">Aéroportuaire</span>
+            </div>
+            <div class="category-domain_item" [routerLink]="[ '/home', 'projects' ]">
+                <div class="image-container">
+                <img src="assets/img/home/hospital.svg" width="100" height="100">
+                </div>
+                
+                <span style="font-weight: 100 ;">Hôpital</span>
+            </div>
+           
+        </div>
+        
+
+        
+    </div>
+    
+</div>

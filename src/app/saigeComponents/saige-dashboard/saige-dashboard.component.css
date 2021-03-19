@@ -1,0 +1,160 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	#dashboard {
+		width: 100%;
+		height: 100%;
+        padding-top: 80px;
+        height: 100%;
+        overflow-y: scroll;
+	}
+
+	#dashboard-menu {
+		height: 100vh;
+		width: 100%;
+		display: none;
+		flex-direction: column;
+		z-index: 50000;
+
+
+    }
+    
+    #open-dashboard {
+		position: fixed;
+		top: 50%;
+		left: 0;
+		display: block;
+		border: 1px solid blue;
+		width: 25px;
+		height: 25px;
+        z-index: 9000;
+        opacity: 0.8;
+	}
+
+	.menu-item {
+		width: 100%;
+		font-size: 1.1em;
+		color: black;
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 50px;
+		padding-right: 50px;
+		border-right: 5px solid white;
+		margin-top: 50px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.menu-item:hover {
+		background-color: white;
+		border-right: 5px solid gray;
+	}
+
+	.menu-item-text {
+		flex: 1;
+		text-align: left;
+		padding-left: 40px;
+	}
+
+
+
+	#dashboard-content {
+		flex: 1;
+		height: 100vh;
+		padding: 10px;
+		padding-top: 0px;
+		background-color: #F5F6F8;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {...}*/
+
+/* Large devices (laptops/desktops, 992px and up)*/
+@media only screen and (min-width: 992px) {
+	#dashboard {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		height: 100vh;
+		position: absolute;
+		top: 0;
+		left: 0;
+		
+	}
+
+	#dashboard-menu {
+		flex: 1;
+        display: flex;
+        position: static;
+		padding-top: 80px;
+		flex-direction: column;
+
+
+	}
+
+	.menu-item {
+		width: 100%;
+		font-size: 1.1em;
+		color: black;
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 50px;
+		padding-right: 50px;
+		border-right: 5px solid white;
+		margin-top: 50px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.menu-item:hover {
+		background-color: white;
+		border-right: 5px solid gray;
+	}
+
+	.menu-item-text {
+		flex: 1;
+		text-align: left;
+		font-size: 0.9em;
+		padding-left: 40px;
+	}
+
+
+
+	#dashboard-content {
+        flex: 5;
+        overflow-y: scroll;
+		height: 100vh;
+		width: 100%;
+		padding: 30px;
+		padding-top: 90px;
+		background-color: #F5F6F8;
+	}
+
+
+	
+}
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up)
+@media only screen and (min-width: 1200px) {...}*/
+
+
+

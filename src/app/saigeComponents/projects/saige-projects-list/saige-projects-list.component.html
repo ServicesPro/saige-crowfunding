@@ -1,0 +1,153 @@
+<app-saige-second-header></app-saige-second-header>
+
+
+<div id="data-container">
+    <div id="top-title">
+        
+    </div>
+    
+    
+    <div id="projects-blocks">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h6>Filtres</h6>
+
+                    <div class="row  mt-5 ">
+                        <div class="col-md-12 text-left ">
+                            <h5>INFRASTRUCTURES</h5>
+                        </div>
+                    </div>
+    
+                    <div class="row mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('routiere')" class="item-container-text">Routière</h5>
+                        </div>
+                    </div>
+                    <div class="row  mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('pont')" class="item-container-text">Ponts</h5>
+                        </div>
+                    </div>
+                    <div class="row  mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('aeroportuaire')" class="item-container-text">Aéroportuaire</h5>
+                        </div>
+                    </div>
+                    <div class="row  mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('hotel')" class="item-container-text">Hôtelerie</h5>
+                        </div>
+                    </div>
+                    <div class="row  mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('logesocial')" class="item-container-text">Logements sociaux</h5>
+                        </div>
+                    </div>
+                    <div class="row  mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('hopital')" class="item-container-text">Hôpital</h5>
+                        </div>
+                    </div>
+    
+                    <div class="row mt-5">
+                        <div class="col-md-12 text-left">
+                            <h5>INDUSTRIELS</h5>
+                        </div>
+                    </div>
+    
+                    <div class="row  mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('parIndus')" class="item-container-text">Parc Industriel</h5>
+                        </div>
+                    </div>
+                    <div class="row  mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('ville')" class="item-container-text">Ville / Village Intelligent</h5>
+                        </div>
+                    </div>
+                    <div class="row  mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('pipeline')" class="item-container-text">Pipeline / Dépôt petrolier</h5>
+                        </div>
+                    </div>
+                    <div class="row  mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('usine')" class="item-container-text">Usine clé en main</h5>
+                        </div>
+                    </div>
+    
+    
+                    <div class="row  mt-5 ">
+                        <div class="col-md-12 text-left ">
+                            <h5>AGRI-BUSINESS</h5>
+                        </div>
+                    </div>
+    
+                    <div class="row mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('agropole')" class="item-container-text">Agropole</h5>
+                        </div>
+                    </div>
+                    <div class="row  mt-2">
+                        <div class="col-md-12 text-right item-container">
+                            <h5 (click)="getProjectsByDomain('ferme')" class="item-container-text">Ferme Intégrée</h5>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div class="col-md-9">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="search" class="form-control" id="filterInput" placeholder="rechercher">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+    
+                        <div class="row mt-5" *ngIf="!isLoadingFinished"> 
+                            <div class="col-md-12 text-center">
+                                <app-sage-spinner></app-sage-spinner>
+                                <div class="mt-5">
+                                    Patientez ...
+                                </div>
+                            </div>        
+                           
+    
+                        </div>
+
+                        <div class="row mt-5" *ngIf="!hasData"> 
+                            <div class="col-md-12 text-center">
+                               <p>
+                                   Pas de projets trouvés
+                               </p>
+                            </div>        
+                           
+    
+                        </div>
+    
+    
+                        <div class="row mt-5">
+    
+                            <div class="col-md-4 mt-4"  *ngFor="let project of projectItems">
+                                <app-project-view [project]="project"></app-project-view>
+                            </div>
+                            
+                           
+    
+                        </div>
+    
+    
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

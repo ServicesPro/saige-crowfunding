@@ -1,0 +1,742 @@
+
+
+<div class="container-fluid mt-5" *ngIf="isUpdatingData">
+    <div class="row mt-5">
+        <div class="col-md-11 mx-auto text-center pl-0">
+            <app-sage-spinner style="margin: 0 auto;"></app-sage-spinner>
+            <p class="mt-5">
+                Veuiller patienter
+            </p>
+        </div>
+
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+
+          <div class="spinner-grow" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+           
+    </div>
+</div>
+
+
+<div class="container-fluid mt-5" *ngIf="!isUpdatingData">
+    <div class="row mt-5">
+        <div class="col-md-11 mx-auto pl-0">
+            
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Mon projet</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Informations Supplémentaire</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Ressources</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="true">Messages</a>
+                  </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                    <!--
+                        [START my projec]
+                    -->
+                    <div class="container-fluid mt-5">
+                    <div class="row mt-5">
+                        <div class="col-md-12 mx-auto pl-0">
+                            
+                            
+                            <div class="mt-5">
+                                
+                                <div class="container-fluid mt-5">
+                                    
+                                    <div class="row mt-5">
+                                        <div class="col-md-5 offset-md-2 pl-5">
+                                            <h3>Etat du projet: <span *ngIf="isProjectApprouved;else contentNotPublished" style="color: green;">Publié</span></h3>
+                                                <ng-template #contentNotPublished>
+                                                    <span style="color: red;">Non Publié</span>
+                                                </ng-template>
+                                                
+                                            <hr/>
+                                        </div>
+                                        
+                                    
+                                            
+                                    </div>
+                                    
+
+                                    <div class="row mt-5">
+                                        <div class="col-md-4 offset-md-2 pl-5">
+                                            <h1>Mise à jour</h1>
+                                        </div>
+                                        
+                                    
+                                            
+                                    </div>
+
+
+
+                                    
+                                    <div class="row mt-5">
+                                        <div class="col-md-4 offset-md-2 pl-5">
+                                            <div class="form-group">
+                                                <label for="name">Nom du projet</label>
+                                                    <input 
+                                                        type="text" 
+                                                        [disabled]="isProjectApprouved"
+                                                        id="name" 
+                                                        [(ngModel)]=" projectName"
+                                                        class="form-control" aria-describedby="nameHelp" placeholder="nom du projet">
+                                            </div>
+                                            <div class="text-right">
+                                                <button (click)="onSaveProjectName()" *ngIf="!isProjectApprouved" class="global-save-button">Enrégistrer</button>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <div class="col-md-4 offset-md-1">
+                                            <h2>Nom Project</h2>
+                                                <p>
+                                                    Donner un nom qui fait voir votre projet
+                                                </p>
+                                        </div>
+                                            
+                                    </div>
+
+                                    <div class="row mt-5">
+                                        <div class="col-md-4 offset-md-2 pl-5">
+                                            <div class="form-group">
+                                                <label for="description">Description</label>
+                                                    <textarea
+                                                        id="description" 
+                                                        class="form-control"
+                                                        [(ngModel)]="projectDescription"
+                                                        [disabled]="isProjectApprouved"
+                                                        name="description" aria-describedby="descriptionHelp" placeholder="description de votre projet" rows="10"></textarea>
+                                            </div>
+                                            <div class="text-right">
+                                                <button (click)="onSaveProjectDescription()" [disabled]="isProjectApprouved" class="global-save-button">Enrégistrer</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 offset-md-1">
+                                            <h2>Description du projet</h2>
+                                                <p>
+                                                Exprimer en quelques mot votre projet, son but et 
+                                                à ceux qui s'addresse votre projet et pourquoi avoir choisi
+                                                cette clientèle
+                                                </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-5">
+                                        <div class="col-md-4 offset-md-2 pl-5">
+                                            <div class="form-group">
+                                                <label for="duration">Durée ( en jours )</label>
+                                                    <input
+                                                        id="duration" 
+                                                        class="form-control"
+                                                        [(ngModel)]="projectDuration"
+                                                        [disabled]="isProjectApprouved"
+                                                        name="duration" aria-describedby="durationHelp"  type="number">
+                                            </div>
+                                            <div class="text-right">
+                                                <button (click)="onSaveProjectDuration()" [disabled]="isProjectApprouved" class="global-save-button">Enrégistrer</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 offset-md-1 pl-5">
+                                            <h2>Durée</h2>
+                                                <p>
+                                                Donner la différence entre aujourd'hui et la data d'écheance 
+                                                du projet
+                                                </p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row mt-5">
+                                        <div class="col-md-4 offset-md-2 pl-5">
+                                            <div class="form-group">
+                                                <label for="domain">Domaine</label>
+                                                    <select
+                                                        id="domain" 
+                                                        class="form-control"
+                                                        [(ngModel)]="projectDomain"
+                                                        [disabled]="isProjectApprouved"
+                                                        name="domain" aria-describedby="domainHelp">
+                                                        <option value="Agriculture">Agriculture</option>
+                                                        <option value="Energie Solaire">Energie Solaire</option>
+                                                    </select>
+                                            </div>
+                                            <div class="text-right">
+                                                <button [disabled]="isProjectApprouved" (click)="onSaveProjectDomain()" class="global-save-button">Enrégistrer</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 offset-md-1 pl-5">
+                                            <h2>Domaine du projet</h2>
+                                            <p>
+                                            Mettre le domaine dans le lequel s'inscrit le projet 
+                                            que vous nous soumettez.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-5">
+                                        <div class="col-md-4 offset-md-2 pl-5">
+                                            <div class="form-group">
+                                                <label for="currency">Monnaie</label>
+                                                    <select
+                                                        [disabled]="isProjectApprouved"
+                                                        id="currency" 
+                                                        class="form-control"
+                                                        [(ngModel)]="projectCurrency"
+                                                        name="projectCurrency" aria-describedby="currencyHelp">
+                                                        <option value="USD">USD</option>
+                                                    </select>
+                                            </div>
+                                            <div class="text-right">
+                                                <button [disabled]="isProjectApprouved" (click)="onSaveProjectCurrency()" class="global-save-button">Enrégistrer</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-4 offset-md-1 pl-5">
+                                            <h2>devise de financement</h2>
+                                                <p>
+                                                Chosir dans quelle devise de monnaie vous 
+                                                avez exprimer le bilan total de votre projet
+                                                </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-5">
+                                        <div class="col-md-4 offset-md-2 pl-5">
+                                            <div>
+                                                <label for="money_wanted">Montant total</label>
+                                                    <input
+                                                        id="money_wanted" 
+                                                        [disabled]="isProjectApprouved"
+                                                        class="form-control"
+                                                        type="number"
+                                                        [(ngModel)]="projectAmount"
+                                                        name="projectAmount" aria-describedby="money_wantedHelp"/>
+                                            </div>
+                                            <div class="text-right">
+                                                <button [disabled]="isProjectApprouved" (click)="onSaveProjectAmount()" class="global-save-button">Enrégistrer</button>
+                                            </div>
+                            
+                                        </div>
+                                        
+                                        <div class="col-md-4 offset-md-1 pl-5">
+                                            <h2>Montant</h2>
+                                                <p>
+                                                A combien s'élève votre projet dans la devise de monnaie choisie
+                                                </p>
+                                        </div>
+                                    </div>                               
+                                
+
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        
+                            
+                    </div>
+                    
+                </div>
+
+                    <!--
+                        [END my projec]
+                    -->
+
+
+
+
+
+
+
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="container-fluid mt-5">
+                        <div class="row mt-5">
+                            <div class="col-md-12 mx-auto pl-0">
+                                
+                                
+                                <div class="mt-5">
+                                    
+                                    <div class="container-fluid mt-5">
+                                        
+                                        <div class="row mt-5">
+                                            <div class="col-md-5 offset-md-2 pl-5">
+                                                <h3>Etat du projet: <span *ngIf="isProjectApprouved;else content_not_pusblished" style="color: green;">Publié</span></h3>
+                                                    <ng-template #content_not_pusblished>
+                                                        <span style="color: red;">Non Publié</span>
+                                                    </ng-template>
+                                                    
+                                                <hr/>
+                                            </div>
+                                            
+                                        
+                                                
+                                        </div>
+                                        
+    
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                <h1>Mise à jour des informations supplémentaires</h1>
+                                            </div>
+                                            
+                                        
+                                                
+                                        </div>
+                                        
+
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                <div class="form-group">
+                                                    <label for="name">Résumé de votre projet</label>
+                                                        <textarea
+                                                        rows="7"
+                                                            id="projectSummary" 
+                                                            [(ngModel)]="projectSummary"
+                                                            class="form-control" aria-describedby="nameHelp" placeholder=""></textarea>
+                                                </div>
+                                                <div class="text-right">
+                                                    <button (click)="onSaveProjectSummary()" class="global-save-button" >Enrégistrer</button>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="col-md-4 offset-md-1">
+                                                <h2>Résumé de votre projet</h2>
+                                                    <p>
+                                                        Donner en quelques lignes un petit résumé de votre projet. 
+                                                        N'oubliez pas d'inclure les élements les plus importants.
+                                                    </p>
+                                            </div>
+                                                
+                                        </div>
+
+                                        
+
+                                        
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                <div class="form-group">
+                                                    <label for="name">Organisation de l'entreprise</label>
+                                                        <textarea
+                                                        rows="15"
+                                                            id="organisation" 
+                                                            [(ngModel)]="projectOrganisationDescription"
+                                                            value='projectOrganisationDescription'
+                                                            class="form-control" aria-describedby="nameHelp" placeholder=""></textarea>
+                                                </div>
+                                                <div class="text-right">
+                                                    <button (click)="onSaveProjectOrganisationDescription()" class="global-save-button" >Enrégistrer</button>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="col-md-4 offset-md-1">
+                                                <h2>Organisation de l'entreprise</h2>
+                                                    <p>
+                                                        Décrivez nous votre organisation, votre entreprise, votre société.
+                                                        Comment est elle hierahisé? Qui dirige ? Et quel a été votre apport dans la
+                                                        société?
+                                                    </p>
+                                            </div>
+                                                
+                                        </div>
+
+
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                <h1>Pourquoi votre projet doit être elle financé ?</h1>
+                                                <p>
+                                                    Dans la section suivante vous donner au plus 
+                                                    3 (trois) particularités de votre projets.
+                                                </p>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                <div class="form-group">
+                                                    <label for="name">Première Raison</label>
+                                                        <textarea
+                                                        rows="9"
+                                                            id="projectReasonOne" 
+                                                            [(ngModel)]="projectReasonOne"
+                                                            class="form-control" aria-describedby="nameHelp" placeholder=""></textarea>
+                                                </div>
+                                                <div class="text-right">
+                                                    <button (click)="onSaveProjectReasonOne()" class="global-save-button" >Enrégistrer</button>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="col-md-4 offset-md-1">
+                                                <h2>Image d'appui</h2>
+                                                    <p>
+                                                        Nous vous conseillons d'ajouter une image en appui
+                                                        pour plus de crédibilité.
+                                                    </p>
+
+                                                    <img [src]="projectSectionOneImageUrl" class="w-100" width="100%" />
+                                                    <div class="form-group">
+                                                        <label for="name">image</label>
+                                                            <input 
+                                                                type="file" 
+                                                                accept=".jpg, .jpeg"
+                                                                id="projectReasonOneImage"
+                                                                (change)="handleFileReasonOneFileChange($event)"
+                                                                class="form-control" aria-describedby="nameHelp" placeholder="...">
+                                                    </div>
+                                                    <div class="text-right">
+                                                        <button (click)="onSaveProjectReasonOneImage()" class="global-save-button" >Enrégistrer</button>
+                                                    </div>
+                                            </div>
+                                                
+                                        </div>
+
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                <div class="form-group">
+                                                    <label for="name">Deuxième Raison</label>
+                                                        <textarea
+                                                        rows="9"
+                                                            id="projectReasonTwo" 
+                                                            [(ngModel)]="projectReasonTwo"
+                                                            class="form-control" aria-describedby="nameHelp" placeholder=""></textarea>
+                                                </div>
+                                                <div class="text-right">
+                                                    <button (click)="onSaveProjectReasonTwo()" class="global-save-button" >Enrégistrer</button>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="col-md-4 offset-md-1">
+                                                <h2>Image d'appui</h2>
+                                                    <p>
+                                                        Nous vous conseillons d'ajouter une image en appui
+                                                        pour plus de crédibilité.
+                                                    </p>
+
+                                                    <img [src]="projectSectionTwoImageUrl" class="w-100" />
+                                                    <div class="form-group">
+                                                        <label for="name">image</label>
+                                                            <input 
+                                                                type="file" 
+                                                                accept=".jpg, .jpeg"
+                                                                id="projectReasonTwoImage"
+                                                                (change)="handleFileReasonTwoFileChange($event)"
+                                                                class="form-control" aria-describedby="nameHelp" placeholder="...">
+                                                    </div>
+                                                    <div class="text-right">
+                                                        <button (click)="onSaveProjectReasonTwoImage()" class="global-save-button" >Enrégistrer</button>
+                                                    </div>
+                                            </div>
+                                                
+                                        </div>
+
+
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                
+                                                <div class="form-group">
+                                                    <label for="name">Troisième Raison</label>
+                                                        <textarea
+                                                        rows="9"
+                                                            id="projectReasonThree" 
+                                                            [(ngModel)]="projectReasonThree"
+                                                            class="form-control" aria-describedby="nameHelp" placeholder=""></textarea>
+                                                </div>
+                                                <div class="text-right">
+                                                    <button (click)="onSaveProjectReasonThree()" class="global-save-button" >Enrégistrer</button>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="col-md-4 offset-md-1">
+                                                <h2>Image d'appui</h2>
+                                                    <p>
+                                                        Nous vous conseillons d'ajouter une image en appui
+                                                        pour plus de crédibilité.
+                                                    </p>
+
+                                                    <img [src]="projectSectionThreeImageUrl" class="w-100" />
+                                                    <div class="form-group">
+                                                        <label for="name">image</label>
+                                                            <input 
+                                                                type="file" 
+                                                                accept=".jpg, .jpeg"
+                                                                id="projectReasonThreeImage" 
+                                                                (change)="handleFileReasonThreeFileChange($event)"
+                                                                class="form-control" aria-describedby="nameHelp" placeholder="...">
+                                                    </div>
+                                                    <div class="text-right">
+                                                        <button (click)="onSaveProjectReasonThreeImage()" class="global-save-button" >Enrégistrer</button>
+                                                    </div>
+                                            </div>
+                                                
+                                        </div>
+
+
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                <div class="form-group">
+                                                    <label for="name">Quatrième Raison</label>
+                                                        <textarea
+                                                        rows="9"
+                                                            id="projectReasonFour" 
+                                                            [(ngModel)]="projectReasonFour"                                                            
+                                                            class="form-control" aria-describedby="nameHelp" placeholder=""></textarea>
+                                                </div>
+                                                <div class="text-right">
+                                                    <button (click)="onSaveProjectReasonFour()" class="global-save-button" >Enrégistrer</button>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="col-md-4 offset-md-1">
+                                                <h2>Image d'appui</h2>
+                                                    <p>
+                                                        Nous vous conseillons d'ajouter une image en appui
+                                                        pour plus de crédibilité.
+                                                    </p>
+
+                                                    <img [src]="projectSectionFourImageUrl" class="w-100" />
+                                                    <div class="form-group">
+                                                        <label for="name">image</label>
+                                                            <input 
+                                                                type="file" 
+                                                                accept=".jpg, .jpeg"
+                                                                id="projectReasonFourImage" 
+                                                                (change)="handleFileReasonFourFileChange($event)"
+                                                                class="form-control" aria-describedby="nameHelp" placeholder="...">
+                                                    </div>
+                                                    <div class="text-right">
+                                                        <button (click)="onSaveProjectReasonFourImage()" class="global-save-button" >Enrégistrer</button>
+                                                    </div>
+                                            </div>
+                                                
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="container-fluid mt-5">
+                        <div class="row mt-5">
+                            <div class="col-md-12 mx-auto pl-0">
+                                
+                                
+                                <div class="mt-5">
+                                    
+                                    <div class="container-fluid mt-5">
+                                        
+                                        <div class="row mt-5">
+                                            <div class="col-md-5 offset-md-2 pl-5">
+                                                <h3>Etat du projet: <span *ngIf="isProjectApprouved;else content_not_pusblished" style="color: green;">Publié</span></h3>
+                                                    <ng-template #content_not_pusblished>
+                                                        <span style="color: red;">Non Publié</span>
+                                                    </ng-template>
+                                                    
+                                                <hr/>
+                                            </div>
+                                            
+                                        
+                                                
+                                        </div>
+                                        
+    
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                <h1>Mise à jour</h1>
+                                            </div>
+                                            
+                                        
+                                                
+                                        </div>
+    
+                                        
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                <div class="form-group">
+                                                    <label for="name">Video Youtube</label>
+                                                        <input 
+                                                            type="text" 
+                                                            id="videoLink" 
+                                                            [(ngModel)]="projectVideoLink"
+                                                            class="form-control" aria-describedby="nameHelp" placeholder="">
+                                                </div>
+                                                <div class="text-right">
+                                                    <button (click)="onSaveProjectVideoLink()" class="global-save-button" >Enrégistrer</button>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="col-md-4 offset-md-1">
+                                                <h2>Video</h2>
+                                                    <p>
+                                                        Faites un brève description visuel de votre projet en montrant l'intérêt 
+                                                        d'y participer à un tel projet. Soyez concis et precis.
+                                                    </p>
+                                            </div>
+                                                
+                                        </div>
+    
+                                        
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                
+                                                <div class="form-group">
+                                                    <label for="name">Affiche Produit</label>
+                                                        <input 
+                                                            type="file" 
+                                                            accept=".jpg, .jpeg"
+                                                            id="smallImage" 
+                                                            accept=".jpg, .jpeg"
+                                                            [(ngModel)]="projectSmallFile"
+                                                            (change)="handleFileSmallFileChange($event)"
+                                                            class="form-control" aria-describedby="nameHelp" placeholder="...">
+                                                </div>
+                                                <div class="text-right">
+                                                    <button (click)="onSaveProjectSmallImage()" class="global-save-button" >Enrégistrer</button>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="col-md-4 offset-md-1">
+                                                <h2>Image - Affiche du produit</h2>
+                                                    <p>
+                                                        Choisissez une image qui présente convenable votre projet et
+                                                        ce que vous vendez à la clientèle. C'est la première chose
+                                                        que veront les investisseurs en cherhant les projets.
+                                                        Fomat : jpg ou jpeg<br/>
+                                                        Dimmensions: w-200px &times; h-300px;
+                                                    </p>
+                                                    <img [src]="smallImageUrl" width="100%" class="w-100"/>
+                                            </div>
+                                                
+                                        </div>
+
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                <div class="form-group">
+                                                    <label for="name">Affiche Projet</label>
+                                                        <input 
+                                                            type="file" 
+                                                            accept=".jpg, .jpeg"
+                                                            id="name" 
+                                                            (change)="handleFileBigFileChange($event)"
+                                                            class="form-control" aria-describedby="nameHelp" placeholder="nom du projet">
+                                                </div>
+                                                <div class="text-right">
+                                                    <button (click)="onSaveProjectBigImage()" class="global-save-button" >Enrégistrer</button>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="col-md-4 offset-md-1">
+                                                <h2>Image - Affiche du projet</h2>
+                                                    <p>
+                                                        Mettez votre image d'acceuil. Cette bannière représentera votre projet.
+                                                        Et s'affichera lorsqu'on désirerait en savoir davantages sur votre projts.
+                                                    </p>
+                                                    <img  [src]="bigImageUrl"/>
+                                            </div>
+                                                
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show active" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                    <div class="container-fluid mt-5">
+                        <div class="row mt-5">
+                            <div class="col-md-12 mx-auto pl-0">
+                                
+                                
+                                <div class="mt-5">
+                                    
+                                    <div class="container-fluid mt-5">
+                                        
+                                        <div class="row mt-5">
+                                            <div class="col-md-5 offset-md-2 pl-5">
+                                                <h3>Etat du projet: <span *ngIf="isProjectApprouved;else content_not_pusblished" style="color: green;">Publié</span></h3>
+                                                    <ng-template #content_not_pusblished>
+                                                        <span style="color: red;">Non Publié</span>
+                                                    </ng-template>
+                                                    
+                                                <hr/>
+                                            </div>
+                                            
+                                        
+                                                
+                                        </div>
+                                        
+    
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5">
+                                                <h1>Notifications</h1>
+                                            </div>
+                                            
+                                        
+                                                
+                                        </div>
+    
+                                        
+                                        <div class="row mt-5">
+                                            <div class="col-md-4 offset-md-2 pl-5" *ngFor="let message of messages">
+                                                <h5>Administrateur - <span>{{ convertDate(message.created_at) }}</span> </h5>
+                                                <p>
+                                                    {{ message.content }}
+                                                </p>
+                                            </div>                              
+                                            
+                                                
+                                        </div>
+    
+                                        
+                                        
+
+                                        
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+              </div>
+
+        </div>
+        
+            
+    </div>
+    
+</div>

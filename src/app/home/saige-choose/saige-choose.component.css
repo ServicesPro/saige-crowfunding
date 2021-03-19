@@ -1,0 +1,139 @@
+
+/*   */
+
+
+
+/* Extra small devices (phones, 600px and down)*/
+@media only screen and (max-width: 600px) {
+	#why-us {
+		padding-left: 5px;
+		padding-right: 5px;
+		margin-top: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	
+
+	#why-us-content {
+		padding: 10px;
+		flex: 1;
+	}
+
+	.why-us-content-text {
+		text-align: center;
+		margin-top: 50px;
+	}
+
+	.why-us-conten-item {
+		display: flex;
+		flex-direction: column;
+		margin-top: 50px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.why-us-content-image {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.why-us-content-image span {
+		font-size: 1.3em;
+		margin-top: 20px;
+	}
+
+	.why-us-content-text {
+		flex: 1
+	}
+
+	.security-path {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	}
+
+	@keyframes dash {
+	  from {
+	    stroke-dashoffset: 822;
+	  }
+	  to {
+	    stroke-dashoffset: 0;
+	  }
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up)*/
+@media only screen and (min-width: 992px) {
+	#why-us {
+		padding-left: 10%;
+		padding-right: 10%;
+		margin-top: 100px;
+		display: flex;
+		flex-direction: row;
+	}
+
+	#why-us-content {
+		padding: 10px;
+		flex: 1;
+	}
+
+	.why-us-conten-item {
+		display: flex;
+		flex-direction: row;
+		margin-top: 50px;
+	}
+
+	.why-us-content-image {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.why-us-content-image span {
+		font-size: 1.3em;
+		margin-top: 20px;
+	}
+
+	.why-us-content-text {
+		flex: 1
+	}
+
+	.security-path {
+	  stroke-dasharray: 1000;
+	  stroke-dashoffset: 1000;
+	  animation: dash 5s linear alternate infinite;
+	}
+
+	@keyframes dash {
+	  from {
+	    stroke-dashoffset: 822;
+	  }
+	  to {
+	    stroke-dashoffset: 0;
+	  }
+	}
+
+	
+	
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {...}*/
+
+
+

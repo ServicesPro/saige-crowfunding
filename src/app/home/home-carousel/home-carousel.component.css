@@ -1,0 +1,35 @@
+#top-banner {
+    color: white;
+    background-color: #29363B;
+    background-image: linear-gradient(#29363B, #163642); /* #035EEF*/
+   
+}
+
+#call_text {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.dark4 {
+    filter: brightness(40%);
+}
+.start-btn {
+    border-radius: 20px;
+    color: white;
+    border: none;
+    background-color:#0061F2;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 60%;
+    border: 1px solid #0061F2
+}
+
+.start-btn:hover {
+    background-color: transparent;
+}

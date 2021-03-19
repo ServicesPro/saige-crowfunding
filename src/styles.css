@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+button {
+    outline: none;
+}
+html, body { height: 100%; }
+body { margin: 0; }
+
+
+/* Global Save button style*/
+.global-save-button {
+    color: white;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    background-color: #0061F2;
+    border-radius: 20px;
+    border: 1px solid  #0061F2;
+    outline: none;
+    margin-top: 10px;
+}
+
+.global-save-button:hover {
+    outline: none;
+    filter: brightness(150%);
+}

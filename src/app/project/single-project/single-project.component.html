@@ -1,0 +1,234 @@
+<app-saige-second-header></app-saige-second-header>
+
+    <div id="project-banner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 offset-md-1">
+                    <img #projectBannerImg src="project.banner_img" width="100%" height="400"/>
+                </div>
+
+                <div class="col-md-4">
+                    <h2 style="font-weight: 100;">EN FINANCEMENT</h2>
+                    <div class="mt-2">
+                        <span style="font-size: 3.2em;">{{ project.name || '' }}</span>
+                    </div>
+                    
+
+                   <p style="word-wrap: break-word; font-size: 1.4em; font-weight: 100" class="mt-3">
+                        {{ project.description }}
+                   </p>
+
+                   <div class="container">           
+            
+                    <div class="row mt-5">
+                        <div class="col-md-1 my-auto">                    
+        
+                            <img src="assets/img/home/user.svg" width="20"/>
+                        </div>
+                        <div class="col-md-5 my-auto">                    
+        
+                            
+                               <span style="font-size: 1.1em;">{{ user.name }}</span>
+                        </div>
+                    </div>
+        
+                    </div>
+
+                    <div class="mt-5">
+                        <span id="price-collected">{{ project.money_earned }} USD</span> collecté sur <span id="price-wanted">{{ project.money_wanted }} USD</span>
+                    </div>
+
+                    <div class="container">           
+            
+                        <div class="row mt-5">
+                            <div class="col-md-12">                    
+            
+                                <div class="">
+                                    <a  style="cursor: pointer;" (click)="onContribute()" class="contrib-link-top">Contribuer</a>
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="project-stat">
+       
+    </div>
+
+
+
+    <div id="project-detail" style="margin-top: 5vh;">
+        <hr/>
+        <div class="container mt-5">
+            <div class="row mt-5">
+                <div class="col-md-7 text-right">
+                    <iframe width="100%" height="400" #projectYoutube src="" frameborder="0"  allow="encrypted-media; autoplay" allowfullscreen></iframe>
+                    
+                </div>
+
+                <div class="col-md-5 my-auto">
+                    <div class="mt-4">
+                        <span><img src="assets/img/home/time.svg" width="5%"/> {{ project.duration }} jours restants</span>
+                    </div>
+                    <div class="mt-4">
+                        <span><img src="assets/img/home/user.svg" width="5%"/> 0 contributions</span>
+                    </div>
+                    <div class="mt-4">
+                        <span><img src="assets/img/home/flag.svg" width="5%"/> Pays : {{ project.location }}</span>
+                    </div>
+
+                    <div class="mt-4">
+                        <span><img src="assets/img/home/domain.svg" width="5%"/> Domaine: {{ project.domain }}</span>
+                    </div>
+                    
+                    <div class="mt-5 w-100">
+                        <a  class="contrib-link-top" (click)="onContribute()" style="width: 100%;">Contribuer</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <hr class="mt-5"/>
+
+            <div class="row mt-5">
+                <div class="col-md-7 pr-1">
+
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">A propos</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Contributions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Budget</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="pills-tabContent">
+
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                           
+                            <div class="container-fluid">
+                                <div class="row mt-5">
+                                    <div class="col-md-12">
+                                       <h2>Resumé</h2>
+                    
+                                        <p class="mt-2">
+                                            {{ project.summary }}
+                                        </p>
+
+
+                                        <h2>Organisation de l'entreprise</h2>
+                    
+                                        <p class="mt-2">
+                                            {{ project.organisation }}
+                                        </p>
+                                    
+                                    </div>
+                    
+                    
+                                </div>
+                                <hr/>
+                                <div class="row mt-5">
+                                    <div class="col-md-12">
+                                       <h1>Pourquoi financer notre projet</h1>
+                                       </div>
+                                </div>
+
+                                <div class="row mt-5">
+                                    <div class="col-md-12 mt-5">
+                                       <h2></h2>
+                                       <img #projectSectionOneImage width="100%" height="400" />
+                                        <p class="mt-2">
+                                            {{ project.sec_one }}
+                                        </p>
+
+                                    </div>
+                    
+                    
+                                </div>
+
+                                <div class="row mt-5">
+                                    <div class="col-md-12">
+                                       <h2></h2>
+
+                                       <img #projectSectionTwoImage width="100%" height="400" />
+                                        
+                                        <p class="mt-2">
+                                            {{ project.sec_two }}
+                                        </p>
+
+                                    </div>
+                    
+                    
+                                </div>
+
+                                <div class="row mt-5">
+                                    <div class="col-md-15">
+                                       <hr/>
+                                    </div>
+                    
+                    
+                                </div>
+
+                                <div class="row mt-5">
+                                    <div class="col-md-12">
+                                       <h2></h2>
+                                       <img #projectSectionThreeImage width="100%" height="400" />
+                                        <p class="mt-2">
+                                            {{ project.sec_three }}
+                                        </p>
+
+                                    </div>
+                    
+                    
+                                </div>
+
+                                <div class="row mt-5">
+                                    <div class="col-md-12">
+                                       <h2></h2>
+                                       <img #projectSectionFourImage width="100%" height="400" />
+                                        <p class="mt-2">
+                                            {{ project.sec_four }}
+                                        </p>
+
+                                    </div>
+                    
+                    
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+                      </div>
+
+
+
+                </div>
+
+                <div class="col-md-5 pl-5">         
+                    
+                </div>
+
+
+
+
+            </div>
+            
+
+
+
+        </div>
+    </div>
+
+    <app-footer></app-footer>

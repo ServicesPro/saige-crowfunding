@@ -1,0 +1,95 @@
+
+/*   */
+
+
+
+/* Extra small devices (phones, 600px and down)*/
+@media only screen and (max-width: 600px) {
+	#projects {
+		padding-left: 5px;
+		padding-right: 5px;
+
+		margin-top: 100px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#projects-title {
+		width: 100%;
+		text-align: center;
+	}
+
+	.see-more-btn {
+		border: 1px solid blue;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 50px;
+		padding-right: 50px;
+		background-color: transparent;
+		border-radius: 20px;
+	}
+
+	.see-more-btn:hover {
+		background-color: blue;
+		color: white;
+		outline: none;
+	}
+
+	#projects-see-more {
+		margin-top: 70px;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up)*/
+@media only screen and (min-width: 992px) {
+	#projects {
+		padding-left: 10%;
+		padding-right: 10%;
+
+		margin-top: 100px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#projects-title {
+		width: 100%;
+		text-align: center;
+	}
+
+	.see-more-btn {
+		border: 1px solid blue;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 50px;
+		padding-right: 50px;
+		background-color: transparent;
+		border-radius: 20px;
+	}
+
+	.see-more-btn:hover {
+		background-color: blue;
+		color: white;
+		outline: none;
+	}
+
+	#projects-see-more {
+		margin-top: 70px;
+		display: flex;
+		justify-content: center;
+	}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {...}*/
+
+
+

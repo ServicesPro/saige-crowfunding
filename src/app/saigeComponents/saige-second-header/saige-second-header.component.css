@@ -1,0 +1,274 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: #FEFEFE;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	#menu {
+		width: 100%;
+		display: flex;
+		height: 70px;
+		flex-direction: row;
+		position: fixed;
+		top: 0;
+		color: rgb(63, 147, 214);
+		box-shadow: 5px 10px 5px rgb(200, 200, 200);
+		overflow: hidden;
+		background-color: white;
+		z-index: 10000;
+		opacity: 1
+	}
+
+	#open-dashboard {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		border: 1px solid blue;
+		width: 25px;
+		height: 25px;
+		z-index: 100000
+	}
+
+	#nav-brand {
+		background-color: transparent;
+		width: 100%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-left: 0;
+	}
+
+	#app-name {
+		color: white;
+		z-index: 1000;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+	}
+
+
+	#toggle-menu {
+		display: inline-block;
+	}
+
+	#nav-links {
+		position: fixed;
+		display: none;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(255, 255, 255);
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		padding-top: 50px;
+		margin-right: 0;
+	}
+
+	#leads-links {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		padding-bottom: 0;
+		width: 100%;
+	}
+
+	.link {
+		font-size: 1.3em;
+		font-weight: bold;
+		color: black;
+		padding-left: 50px;
+		padding-right: 50px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		width: 100%;
+	}
+
+	.a-link {
+		font-size: 1.3em;
+		font-weight: bold;
+		color: black;
+		padding-left: 50px;
+		padding-right: 50px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		width: 100%;
+	}
+
+	.link:hover {
+		background-color: #3F93D6;
+		color: white;
+	}
+
+	.link-ml {
+		margin-left: 0px
+	}
+
+	.link-mr {
+		margin-left: 0px
+	}
+
+	#auth-links {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		justify-content: flex-start;
+		border-top: 2px solid white;
+		margin-top: 0;
+		color: black;
+		cursor: pointer;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {...}*/
+
+/* Large devices (laptops/desktops, 992px and up)*/
+@media only screen and (min-width: 992px) {
+	#menu {
+		width: 100%;
+		display: flex;
+		height: 70px;
+		flex-direction: row;
+		position: fixed;
+		top: 0;
+		color: rgb(63, 147, 214);
+		box-shadow: 5px 10px 5px rgb(200, 200, 200);
+		overflow: hidden;
+		background-color: white;
+		z-index: 10000;
+		opacity: 1
+	}
+
+
+	#nav-brand {
+		flex: 1;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin-left: 10%;
+		display: flex;
+		align-items: center;
+		
+		
+	}
+
+	#app-name {
+		font-size: 1.5em;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		color: black;
+		
+	}
+
+	#toggle-menu {
+		display: none;
+	}
+
+	#nav-links {
+		flex: 9;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		color: black;
+		margin-right: 10%;
+	}
+
+	#leads-links {
+		flex: 7;
+	}
+
+	#auth-links {
+		flex: 5;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+	}
+
+	.create-link {
+		background-color: rgb(3, 1, 147); /*rgb(0, 186, 148)*/;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		color: white;
+		border-radius: 20px;
+	}
+
+
+
+	.link {
+		font-size: 1.1em;
+		font-weight: 500;
+		color: black;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		cursor: pointer;
+	}
+
+	.link:hover {
+		background-color: #3F93D6;
+		border-radius: 20px;
+		color: white;
+	}
+
+	.link-out {
+		font-size: 1.1em;
+		font-weight: 500;
+		color: rgb(63, 147, 214);
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	.link-out:hover {
+		background-color: rgb(237, 54, 38);
+		border-radius: 20px;
+	}
+
+
+
+	.a-link {
+		font-size: 1.1em;
+		font-weight: 200;
+	}
+
+	.link-ml {
+		margin-left: 20px
+	}
+
+	.link-mr {
+		margin-right: 20px
+	}
+
+
+	
+}
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up)
+@media only screen and (min-width: 1200px) {...}*/
+
+
+

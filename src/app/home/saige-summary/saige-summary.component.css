@@ -1,0 +1,113 @@
+
+/*   */
+
+
+
+/* Extra small devices (phones, 600px and down)*/
+@media only screen and (max-width: 600px) {
+	#summary {
+		padding-left: 5px;
+		padding-right: 5px;
+		margin-top: 100px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.summary-number {
+		font-size: 5em;
+		color:white;
+		font-weight: 500;
+		text-align: center;
+	}
+
+	#summary-title {
+		text-align: center;
+	}
+
+	.summary-content-item-title {
+		text-align: center;
+		font-size: 2em;
+	}
+
+	#summary-content {
+		display: flex;
+		margin-top: 100px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		background: blue;
+		color: white;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	.summary-content-item {
+		flex: 1;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up)*/
+@media only screen and (min-width: 992px) {
+	
+	#summary {
+		
+		margin-top: 100px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.summary-number {
+		font-size: 5em;
+		color:white;
+		font-weight: 500;
+		text-align: center;
+	}
+
+	#summary-title {
+		text-align: center;
+	}
+
+	.summary-content-item-title {
+		text-align: center;
+		font-size: 2em;
+	}
+
+	#summary-content {
+		display: flex;
+		margin-top: 100px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		padding-left: 10%;
+		padding-right: 10%;
+
+		background: blue;
+		color: white;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	.summary-content-item {
+		flex: 1;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {...}*/
+
+
+

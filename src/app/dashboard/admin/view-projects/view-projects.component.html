@@ -1,0 +1,52 @@
+
+<div class="container mt-5">
+
+    <div class="row mt-5">
+        <h2>Les projets en cours</h2>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-3 pl-2 mt-3 ">
+            <div class="user-project user-add-project text-center" id="new_project">
+                <span>+ Ajouter un projet</span>
+            </div>
+            
+        </div>
+
+        <div class="col-md-3 pl-2 mt-3" *ngFor="let project of projects" > 
+            
+            <div class="user-project" [(ngModel)]="project.id" (click)="onCheckProject(project.id)">
+                <h5 class="project-title"> {{  project.name  }}</h5>
+        
+                <div class="mt-2">
+                    <p style="word-wrap: break-word;">
+                        {{  project.description  }}
+                    </p> 
+                </div>
+        
+              
+        
+                <div style="position: relative;left: 0;bottom: 0;">
+
+                    <div>
+                        <span *ngIf="project.appouved" style="color: green;">
+                            Accepté
+                        </span>
+                        <span *ngIf="!project.appouved" style="color: red;">
+                            En cours
+                        </span>
+                    </div>
+                    <div>
+                      
+                    </div>
+                    <input type='hidden' value="project id" />
+        
+                </div>
+            </div>
+        </div>
+
+       
+
+       
+    </div>  
+</div>

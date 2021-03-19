@@ -1,0 +1,237 @@
+<div id="data-container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-11 mx-auto">
+    
+    
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">administrateurs</a>
+                      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Projet d'états</a>
+                      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contributions</a>
+                    </div>
+                  </nav>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="container-fluid">
+    
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <hr/>
+                                    <h2></h2>
+                                </div>
+                            </div>
+            
+            
+            
+            
+                            <div class="row mt-4">
+                                <h1>Gérer les administrateurs</h1>
+                            </div>
+            
+                            <div class="row mt-3">
+                               
+            
+                                <div class="col-md-3 pl-2 mt-3 my-auto"  > 
+                                    <label>Enrégistrer un nouvel administrateur</label>
+                                    <input
+                                        type="email"
+                                        [(ngModel)]="email"
+                                        class="form-control"
+                                        placeholder="email du nouvel administrateur"/>
+                                        <button class="btn btn-success mt-3" (click)="onAddNewAdministrator()">Enrégistrer</button>
+                                </div>
+            
+                                <div class="col-md-2 pl-2 mt-3" *ngIf="isUpdating"> 
+                                   <app-sage-spinner></app-sage-spinner>
+                                </div>
+            
+            
+                            </div>
+            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <hr/>
+                                    <h2>Liste des administrateurs</h2>
+                                    <p class="alert alert-info">
+                                       Ceux ci ont le droit d'acepter ou de refuser un projet soumis
+                                    </p>
+                                </div>
+                            </div>
+            
+                            <div class="row">
+                               
+            
+                                <div class="col-md-3 pl-2 mt-3"  *ngFor="let admin of admins" > 
+                        
+                                    <div class="user-project">         
+                                       
+                                
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h3>Admin </h3>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                   <img src="{{ admin.photo_url }}" width="50" height="50" style="border-radius: 50%;" />
+                                                </div>
+                                                <div class="col-md-6 my-auto">
+                                                    {{ admin.name }}
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-md-6">
+                                                    <button class="btn btn-danger" [(ngModel)]="admin.user_uid" ngDefaultControl (click)="onDeleteAdmin(admin.user_uid)" >Supprimer</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                
+                                        
+                                    </div>
+                                </div>
+            
+            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    
+    
+                        <div class="container-fluid">
+    
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <hr/>
+                                    <h2></h2>
+                                </div>
+                            </div>
+            
+            
+            
+            
+                            <div class="row mt-4">
+                               
+                                <div class="col-md-4 pl-0">
+                                    <h1>Gérer les VIPs</h1>
+                                    <p class="alert alert-danger">
+                                        Si vous souhaiter mettre à jour les information de vérifiation d'un vip,
+                                        veuillez le supprimze puis le recréer.
+                                    </p>
+                                    <p class="alert alert-warning">
+                                       En créant un nouveau vip, n'oubliez pas d'envoyer l'identifiant et le mot de 
+                                       passe à l'utilisateur par email.
+                                       <br/>
+                                       Dans les version prochaines tout sera fait automatiquement
+                                    </p>
+                                </div>
+                            </div>
+            
+                            <div class="row mt-3">
+                               
+            
+                                <div class="col-md-3 pl-2 mt-3 my-auto"  > 
+                                    <label>Enrégistrer un nouvel Vip</label>
+                                    <input
+                                        type="email"
+                                        [(ngModel)]="vipEmail"
+                                        class="form-control"
+                                        placeholder="email"/>
+                                        
+                                </div>
+    
+                                <div class="col-md-3 pl-2 mt-3 my-auto"  > 
+                                    <label>Identifiant</label>
+                                    <input
+                                        type="text"
+                                        [(ngModel)]="vipIdentifier"
+                                        class="form-control"
+                                        placeholder=""/>
+                                        
+                                </div>
+    
+                                <div class="col-md-3 pl-2 mt-3 my-auto"  > 
+                                    <label>Mot de passe</label>
+                                    <input
+                                        type="text"
+                                        [(ngModel)]="vipPassword"
+                                        class="form-control"
+                                        placeholder=""/>
+                                        
+                                </div>
+            
+                                <div class="col-md-2 pl-2 mt-3"> 
+                                  
+                                   <button class="btn btn-success mt-3" (click)="onAddNewVip()">Enrégistrer</button>
+                                </div>
+            
+            
+                            </div>
+    
+                            <div class="row">
+                                <div class="col-md-12 pl-2 mt-3" *ngIf="isUpdating"> 
+                                    <app-sage-spinner></app-sage-spinner>
+                                    <button class="btn btn-success mt-3" (click)="onAddNewVip()">Enrégistrer</button>
+                                 </div>
+                            </div>
+            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <hr/>
+                                    <h2>Liste des vips</h2>
+                                    <p class="alert alert-info">
+                                        Ceux-ci ont le droit de consulter les projets qui se rangent 
+                                        <br/> qui sont des projets d'états
+                                    </p>
+                                </div>
+                            </div>
+            
+                            <div class="row">
+                               
+            
+                                <div class="col-md-3 pl-2 mt-3"  *ngFor="let vip of vips" > 
+                        
+                                    <div class="user-project">         
+                                       
+                                
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h3>VIP </h3>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                   <img src="{{ vip.photo_url }}" width="50" height="50" style="border-radius: 50%;" />
+                                                </div>
+                                                <div class="col-md-6 my-auto">
+                                                    {{ vip.name }}
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-md-6">
+                                                    <button class="btn btn-danger" [(ngModel)]="vip.user_uid" ngDefaultControl (click)="onDeleteVip(vip.user_uid)" >Supprimer</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                
+                                        
+                                    </div>
+                                </div>
+            
+            
+                            </div>
+                        </div>
+    
+    
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                  </div>
+    
+                
+    
+            </div>
+        </div>
+    </div>
+</div>

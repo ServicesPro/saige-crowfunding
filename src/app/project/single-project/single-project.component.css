@@ -1,0 +1,45 @@
+#project-banner {
+    padding-top: 5vh;
+    padding-bottom: 20vh;
+    background-size: cover;
+    margin-top: 80px;
+}
+
+#price-collected, #price-wanted {
+    font-size: 1.6em;
+    font-weight: 100;
+}
+
+.contrib-link {   
+    background-color: #0061F2;
+    padding-left: 10vh;
+    padding-right: 10vh;
+    border-radius: 20px;
+    color: white;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border: 1px solid #0061F2;
+}
+.contrib-link:hover {
+    text-decoration: none;
+    color: black;
+    border: 1px solid #0061F2;
+    background-color: transparent;
+}
+#big-contrib {
+    width: 100%;
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+    text-align: center;
+    background-color: #0061F2;
+}
+
+.contrib-link-top {
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: transparent;
+    cursor: pointer;
+}

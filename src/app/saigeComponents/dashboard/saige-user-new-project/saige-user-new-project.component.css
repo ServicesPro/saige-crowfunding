@@ -1,0 +1,72 @@
+
+
+
+#data-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#user-datas {
+    background-color: #0061F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#user-datas span {
+    font-size: 2.1em;
+    color: white;
+}
+
+
+label {
+   margin-top: 5vh;
+}
+
+
+.submit-btn {
+    background-color: #00BA94;
+    border: none;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 2px;
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    filter: brightness(150%);
+    outline: none;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {...}*/
+
+/* Large devices (laptops/desktops, 992px and up)*/
+@media only screen and (min-width: 992px) {
+	
+
+	
+
+
+	
+}
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up)
+@media only screen and (min-width: 1200px) {...}*/
+
+
+

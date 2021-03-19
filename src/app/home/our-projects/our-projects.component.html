@@ -1,0 +1,48 @@
+<div id="our-projects">
+    <div class="container-fluid">
+        <div class="row" style="margin-top: 20vh;">
+            <div class="col-md-12 mt-5 text-center">
+                <h1>Nos projets les plus soutenues</h1>
+                <small>Faites un tour</small>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 5vh;">
+            <div class="col-md-12 mt-5 text-left">
+                <h4>Récemments</h4>
+                <hr/>
+            </div>
+        </div>
+
+
+        <div class="row mt-5" *ngIf="isLoadingFinished">
+            
+                            
+                        
+                            <div class="col-md-3 mt-4">
+                                <app-project-view [project]="projects[0]" ></app-project-view>
+                            </div>
+                            <div class="col-md-3 mt-4">
+                                <app-project-view [project]="projects[1]"></app-project-view>
+                            </div>
+                            <div class="col-md-3 mt-4">
+                                <app-project-view [project]="projects[2]"></app-project-view>
+                            </div>
+                            <div class="col-md-3 mt-4">
+                                <app-project-view [project]="projects[3]" ></app-project-view>
+                            </div>
+                       
+            
+            <!-- END will be removed later-->
+        </div>
+
+
+        <div class="row mt-5">
+            <div class="col-md-12 text-center mt-5" >
+                <a  class="see-other-projects" routerLink="/home/projects">  voir d'autres projets </a>
+            </div>
+            
+        </div>
+
+    </div>
+</div>

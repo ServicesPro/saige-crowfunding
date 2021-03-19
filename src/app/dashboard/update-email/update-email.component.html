@@ -1,0 +1,72 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 mx-center">
+            <h2>Mettre à jour l'email</h2>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div *ngIf="isUpdating">
+                            <app-sage-spinner></app-sage-spinner>
+                            <p class="mt-3">
+                                Veuiller patienter...
+                            </p>
+                        </div>
+                        <div *ngIf="hasError">
+                            <p class="alert alert-danger">
+                                {{ errorMessage }}
+                            </p>
+                        </div>
+
+                        <div *ngIf="hasSuccess">
+                            <p class="alert alert-success">
+                                Email mis à jour...
+                            </p>
+                        </div>
+                        <form [formGroup]="updateEmailForm" class="mt-5" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label for="password">Mot de passe</label>
+                                    <input 
+                                        type="password" 
+                                        id="password" 
+                                        class="form-control" 
+                                        formControlName="password" aria-describedby="passwordHelp" placeholder="password">
+                                
+                                <ul *ngIf="updateEmailForm.get('password').invalid && (updateEmailForm.get('password').dirty || updateEmailForm.get('password').touched)"
+                                    class="alert alert-danger mt-3">
+                                        <li>mot de passe invalide</li>
+                                        <li *ngIf="updateEmailForm.get('password').errors.required">
+                                             mot de passe est requis
+                                        </li>
+                                </ul>
+                                
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Nouvelle adresse email</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        class="form-control" 
+                                        formControlName="email" aria-describedby="emailHelp" placeholder="email">
+                                
+                                <ul *ngIf="updateEmailForm.get('email').invalid && (updateEmailForm.get('email').dirty || updateEmailForm.get('email').touched)"
+                                    class="alert alert-danger mt-3">
+                                        <li>email invalide</li>
+                                        <li *ngIf="updateEmailForm.get('email').errors.required">
+                                             Email est requis
+                                        </li>
+                                </ul>
+                                
+                            </div>
+                            <div class="form-group mt-5">
+                                <button class="submit-btn" type="submit" [disabled]="updateEmailForm.invalid" >Mettre à jour</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

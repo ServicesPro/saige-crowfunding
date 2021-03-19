@@ -1,0 +1,52 @@
+<div id="data-container">
+    
+<div class="container mt-5">
+
+    <div class="row mt-5">
+        <h2>Les projets en cours</h2>
+    </div>
+
+    <div class="row mt-5">
+        
+
+        <div class="col-md-3 pl-2 mt-3" *ngFor="let project of projects" > 
+            
+            <div class="user-project" [(ngModel)]="project.id" ngDefaultControl (click)="onCheckProject(project.id)">
+                <h5 class="project-title"> {{  project.name  }}</h5>
+        
+                <div class="mt-2">
+                    <p style="word-wrap: break-word;">
+                        {{  compressDescription( project.description )  }}
+                    </p> 
+                </div>
+        
+              
+        
+                <div style="position: relative;left: 0;bottom: 0;">
+
+                    <div>
+                        <span *ngIf="project.approuved=='accept'" style="color: green;">
+                            Accepté
+                        </span>
+                        <span *ngIf="project.approuved=='none'" style="color: blue;">
+                            En cours
+                        </span>
+                        <span *ngIf="project.approuved=='reject'" style="color: red;">
+                            Rejeté
+                        </span>
+                    </div>
+                    <div>
+                      
+                    </div>
+                    <input type='hidden' value="project id" />
+        
+                </div>
+            </div>
+        </div>
+
+       
+
+       
+    </div>  
+</div>
+</div>

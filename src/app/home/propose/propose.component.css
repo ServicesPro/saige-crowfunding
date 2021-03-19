@@ -1,0 +1,26 @@
+#propose {
+    width: 100%;
+    background-color: #0061F2;
+    color: white;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+}
+
+
+.started-btn {
+    background-color: #F3B212;
+    border: none;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    color: white;
+    border-radius: 20px;
+    border: 1px solid  #0061F2;
+}
+
+.started-btn:hover {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+}

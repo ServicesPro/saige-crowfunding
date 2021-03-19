@@ -1,0 +1,91 @@
+<div id="main-menu">
+
+
+    <nav class="navbar navbar-expand-lg "> 
+        <a class="navbar-brand" routerLink="/"><img src="assets/img/home/saige_logo_description.svg" width="150" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" id="toggler-icon"><img src="assets/img/menu_svg.svg" width="20" /></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-auto"> 
+
+
+                <li class="nav-item" routerLinkActive="activr" *ngIf="isManager"> 
+                    <a class="nav-link" routerLink="/auth/dashboard/manager/main" style="margin-right: 10px"> 
+                    <span class="main-nav-text">Management</span>
+                    </a> 
+                </li>
+
+
+                <li class="nav-item" routerLinkActive="activr" *ngIf="isAdmin"> 
+                    <a class="nav-link" routerLink="/auth/dashboard/admin/view-projects" style="border-right: 1px solid gray; margin-right: 10px"> 
+                    <span class="main-nav-text">Administration</span>
+                    </a> 
+                </li>
+                
+                <li class="nav-item" routerLinkActive="active"> 
+                    <a class="nav-link" routerLink="/"> 
+                    <span class="main-nav-text">Entrepreneurs</span>
+                    </a> 
+                </li>
+            
+
+
+                <li class="nav-item dropdown" routerLinkActive="active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="main-nav-text">Projets</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" (click)="onNavigateToPublicProjects()">Projets publics</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" style="cursor: pointer;" (click)="onNavigateToPrivateProjets()">Projets d'états</a>
+                </div>
+                </li>
+
+
+
+                <li class="nav-item" routerLinkActive="activr"> 
+                    <a class="nav-link" (click)="onNavigateToInverstors()"> 
+                        <span class="main-nav-text">Investisseurs</span>
+                    </a> 
+                </li>
+
+                <li class="nav-item" routerLinkActive="activr" *ngIf="!isAuth"> 
+                    <a class="nav-link" routerLink="/auth/signup"> 
+                        <span class="main-nav-text">S'inscrire</span>
+                    </a> 
+                </li>
+
+                <li class="nav-item" routerLinkActive="activr" *ngIf="!isAuth"> 
+                    <a class="nav-link" routerLink="/auth/signin"> 
+                        <span class="main-nav-text">Connexion</span>
+                    </a> 
+                </li>
+                
+                <li>
+                    <a routerLink="auth/dashboard"
+                    style="cursor:pointer"
+                    class="nav-link"
+                    *ngIf="isAuth"><span class="main-nav-text"> Mon compte</span> </a>
+                </li>
+
+                <li>
+                    <a (click)="onSignOut()"
+                    style="cursor:pointer"
+                    class="nav-link"
+                    *ngIf="isAuth"><span class="main-nav-text">Déconnexion</span></a>
+                </li>
+
+
+                <li>
+                    <a (click)="onNavigateToLoginOrDashboard()"
+                    style="cursor:pointer"
+                    class="nav-link"><span class="startedtop-btn">Démarrer</span></a>
+                </li>
+                
+            </ul> 
+        </div>
+    </nav>
+</div>
+

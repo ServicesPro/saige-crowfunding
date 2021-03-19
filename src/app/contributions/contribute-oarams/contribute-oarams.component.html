@@ -1,0 +1,104 @@
+<app-saige-second-header></app-saige-second-header>
+<div id="data-container">
+    <div class="container" *ngIf="isLoading">
+        <div class="row">
+            <div class="col-md-11 text-center mx-auto">
+                <app-sage-spinner></app-sage-spinner>
+    
+                <p class="mt-5">
+                    Veuillez patienter
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container" *ngIf="!isLoading">
+        <div class="row">
+            <div class="col-md-11 mx-auto">
+    
+    
+                <div class="contaner-fluid">
+    
+                    <div class="row">
+                        <h1>Contribuer au projet</h1>
+    
+                    </div>
+    
+    
+                    <div class="row mt-5">
+    
+                        <div class="col-md-5">
+                            <h1>{{ project.name }}</h1>
+    
+                            <p class="word-wrap: break">
+                               {{ project.description }}
+                               
+                            </p>
+    
+                            <img src="{{ project.product_img }}" width="100%" height="400"/>
+                        </div>
+    
+                       
+
+                        <div class="col-md-5 offset-md-1">
+
+                            <div class="form-group">
+                                <label for="name" style="font-size: 2em">Nom complet</label>
+                                <input 
+                                     type="text" 
+                                     [(ngModel)]="name"
+                                     class="form-control"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" style="font-size: 2em">Email</label>
+                                <input 
+                                     type="email" 
+                                     [(ngModel)]="email"
+                                     class="form-control"/>
+                            </div>
+
+
+                           <div class="form-group">
+                               <label for="Amount" style="font-size: 2em">Montant</label>
+                               <input 
+                                    type="number" 
+                                    min="1"
+                                    [(ngModel)]="amount"
+                                    class="form-control"/>
+
+                                    {{ amount }}
+                           </div>
+    
+                           <div class="form-group">
+                                <button (click)="onPay()" class="global-save-button"  *ngIf="!isCreatingSession">Contribuer</button>
+                            </div>
+
+                            <div class="form-group" *ngIf="isCreatingSession">
+                                <app-sage-spinner></app-sage-spinner>
+                                <p>
+                                    Veuillez patienter...
+                                </p>
+                            </div>
+
+
+                            <div class="form-group" *ngIf="hasErrors">
+                                <p class="alert alert-danger">
+                                    Verifier vos entrées de données...
+                                    ou une erreur s'est produite
+                                </p>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+    
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

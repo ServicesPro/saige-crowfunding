@@ -1,0 +1,164 @@
+
+/*   */
+
+
+
+/* Extra small devices (phones, 600px and down)*/
+@media only screen and (max-width: 600px) {
+	#howItWorks {
+		padding-left: 5px;
+		padding-right: 5px;
+
+		margin-top: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#howItWorks-title {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#howItWorks-title-text {
+		font-size: 1.7em;
+	}
+
+	#howItWorks-title p {
+		font-size: 1.2em;
+		font-weight: 100;
+		width: 100%;
+		margin-top: 50px;
+		text-align: center;
+	}
+
+	#howItWorks-image {
+		height: 300px;
+	}
+
+	#howItWorks-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.howItWorks-content-item {
+		margin-top: 50px;
+		border-radius: 10px;
+		width: 100%;
+		box-shadow: 5px 5px 10px rgb(240, 240, 240);
+	}
+
+	
+
+	.howItWorks-content-item-header {
+		width: 100%;
+		padding: 15px;
+		display: flex;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		
+	}
+
+	.howItWorks-content-item-header:hover {
+		background-color: rgb(0, 186, 148);
+		color: white
+		
+	}
+
+	.howItWorks-content-item-header-title {
+		font-size: 1.5em;
+	}
+
+	.howItWorks-content-item-body {
+		padding: 10px;
+		display: none;
+		transition: display 2s;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up)
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up)
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up)*/
+@media only screen and (min-width: 992px) {
+	#howItWorks {
+		padding-left: 10%;
+		padding-right: 10%;
+
+		margin-top: 100px;
+		display: flex;
+		flex-direction: row;
+	}
+
+	#howItWorks-title {
+		flex: 1;
+	}
+
+	#howItWorks-title p {
+		font-size: 1.2em;
+		font-weight: 100;
+		width: 80%;
+		margin-top: 50px;
+	}
+
+	#howItWorks-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.howItWorks-content-item {
+		margin-top: 50px;
+		border-radius: 10px;
+		box-shadow: 5px 5px 10px rgb(240, 240, 240);
+	}
+
+	
+
+	.howItWorks-content-item-header {
+		width: 100%;
+		padding: 15px;
+		display: flex;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		
+	}
+
+	.howItWorks-content-item-header:hover {
+		background-color: rgb(0, 186, 148);
+		color: white
+		
+	}
+
+	.howItWorks-content-item-header-title {
+		font-size: 1.5em;
+	}
+
+	.howItWorks-content-item-body {
+		padding: 10px;
+		display: none;
+		transition: display 2s;
+	}
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {...}*/
+
+
+
+

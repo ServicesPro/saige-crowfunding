@@ -1,0 +1,36 @@
+<div #menu id="menu">
+    <div id="nav-brand">
+
+        <span id="app-name"
+        style="padding-left: 0">
+            <span
+                #toggleMenuSpan
+                id="toggle-menu"
+                style="background-image: url('../../../assets/img/home/menu_svg.svg'); width: 50px;"
+                >
+                <img src="assets/img/home/menu_svg.svg" width="30px" height="30px" style="margin-top: 10px">
+            </span>
+        <span style="cursor: pointer;" [routerLink]="[ '/home']">SAIGE</span></span>
+
+        <span #appLogo id="app-logo" style="display: none; cursor: pointer;" [routerLink]="[ '/home']">
+            <img src="assets/img/home/saige_logo.svg" width="50" height="50">
+        </span>
+        
+    </div>
+
+    <div #navLinks  id="nav-links">
+        <div id="leads-links">
+            <span #link class="link" [routerLink]="[ '/home']">Accueil</span>
+            <span #link class="link link-ml" (click)="onNavigateToInverstors()" >Investisseurs</span>
+
+            <span #link class="link link-ml"  [routerLink]="[ '/home', 'projects']">Projets</span>
+            <span #link class="link link-ml"  [routerLink]="[ '/home', 'private-projects']">Projets d'état</span>
+        </div>
+        <div id="auth-links">
+            <span #createLinkConnected (click)="onSignOut()" style="cursor: pointer;" *ngIf="isAuth" class="a-link link-l link-mr">Déconnecter</span>
+            <span #createLinkConnected (click)="onNavigateToDashboard()" style="cursor: pointer;" *ngIf="isAuth" (click)="onNavigateToLoginOrDashboard()" class="a-link link-l link-mr">Tableau de bord</span>
+            <span #loginLink class="a-link" id="login-link" (click)="onNavigateToLoginOrDashboard()" *ngIf="!isAuth" style="cursor: pointer;">Se Connecter</span>
+            <span #createLink (click)="onNavigateToLoginOrDashboard()" class="a-link create-link">Démarrer</span>
+        </div>
+    </div>
+</div>
